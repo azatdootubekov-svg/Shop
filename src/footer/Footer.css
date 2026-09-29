@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background: #0f172a;
+  padding: 30px;
+}
+
+.ShopFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+  }
+  h3{
+    color: #64748B;
+     font-size: 15px;
+    font-weight: 300;
+  }
+}

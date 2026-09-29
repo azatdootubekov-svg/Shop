@@ -1,0 +1,10 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  input {
+    padding: 10px 40px;
+    
+  }
+}

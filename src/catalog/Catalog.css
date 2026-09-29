@@ -1,0 +1,192 @@
+/* Базовый сброс фона страницы, если еще не сделан */
+#catalog {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Двухколоночный макет: Фильтр слева, товары справа */
+.catalog-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Левая колонка - Блок фильтров */
+.Filter {
+  width: 280px; /* Фиксированная ширина сайдбара */
+  min-width: 280px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.Filter h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.Filter h2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categories label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  cursor: pointer;
+}
+
+.categories input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb; /* Синий цвет чекбокса */
+  cursor: pointer;
+}
+
+/* Поля ввода цен */
+.inputPrice {
+  display: flex;
+  gap: 12px;
+}
+
+.inputPrice input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.inputPrice input:focus {
+  border-color: #2563eb;
+}
+
+/* Кнопка "Применить" */
+.btn-apply {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background 0.2s;
+}
+
+.btn-apply:hover {
+  background: #1d4ed8;
+}
+
+/* Правая колонка - Контейнер для товаров */
+.catalog-products {
+  flex: 1; /* Занимает всю оставшуюся ширину экрана */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Верхняя строка над карточками (кол-во товаров и сортировка) */
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  overflow-x: auto;
+}
+
+/* На случай маленьких экранов складываем их друг под друга */
+@media (max-width: 768px) {
+  .catalog-layout {
+    flex-direction: column;
+  }
+  .Filter {
+    width: 100%;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 40px 0;
+}
+
+.pagination button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #ddd;
+  background: white;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #f1f1f1;
+}
+
+.pagination .active-page {
+  background: #2864ed;
+  color: white;
+  border-color: #2864ed;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
